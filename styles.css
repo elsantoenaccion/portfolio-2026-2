@@ -87,7 +87,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 12rem;
+  padding: 12rem 2rem 3rem 2rem;
   max-width: 760px;
 }
 
