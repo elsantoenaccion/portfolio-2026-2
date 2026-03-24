@@ -144,22 +144,25 @@ h1::after {
   position: absolute;
   inset: 0;
   opacity: 0;
-  pointer-events: none;
+  color: rgba(255, 255, 255, 0.25);
 }
 
 h1::before {
-  color: #ff0033;
   transform: translate(1px, 0);
 }
 
 h1::after {
-  color: #00ccff;
   transform: translate(-1px, 0);
 }
+
 
 h1:hover::before,
 h1:hover::after {
   opacity: 0.35;
+}
+
+h1:hover {
+  opacity: 0.85;
 }
 
 h1:hover {
