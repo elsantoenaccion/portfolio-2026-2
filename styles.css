@@ -60,25 +60,53 @@ body {
   background-repeat: no-repeat;
   filter: grayscale(100%) contrast(1.05) brightness(0.38);
   z-index: 1;
+  overflow: hidden;
+}
+
+/* glitch sutil en imagen */
+.hero-media::before,
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: inherit;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.hero-media::before {
+  transform: translate(2px, 0);
+  filter: contrast(1.2) brightness(0.6) sepia(1) hue-rotate(-50deg) saturate(4);
+}
+
+.hero-media::after {
+  transform: translate(-2px, 0);
+  filter: contrast(1.2) brightness(0.6) sepia(1) hue-rotate(200deg) saturate(4);
+}
+
+.hero:hover .hero-media::before,
+.hero:hover .hero-media::after {
+  opacity: 0.18;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(10, 10, 10, 0.96) 0%,
-      rgba(10, 10, 10, 0.88) 34%,
-      rgba(10, 10, 10, 0.62) 58%,
-      rgba(10, 10, 10, 0.28) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 10, 0.96) 0%,
+    rgba(10, 10, 10, 0.88) 34%,
+    rgba(10, 10, 10, 0.62) 58%,
+    rgba(10, 10, 10, 0.28) 100%
+  );
   z-index: 2;
   pointer-events: none;
 }
-
-
- 
 
 .hero-content {
   position: relative;
@@ -99,12 +127,64 @@ body {
 }
 
 h1 {
+  position: relative;
+  display: inline-block;
   font-size: clamp(3rem, 5vw, 5.2rem);
   font-weight: 500;
   letter-spacing: -0.05em;
   line-height: 0.92;
   max-width: 6ch;
   color: rgba(255, 255, 255, 0.92);
+}
+
+/* glitch sutil en nombre */
+h1::before,
+h1::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+h1::before {
+  color: #ff0033;
+  transform: translate(1px, 0);
+}
+
+h1::after {
+  color: #00ccff;
+  transform: translate(-1px, 0);
+}
+
+h1:hover::before,
+h1:hover::after {
+  opacity: 0.35;
+}
+
+h1:hover {
+  animation: glitchMove 0.22s ease;
+}
+
+@keyframes glitchMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-0.5px, 0.5px);
+  }
+  80% {
+    transform: translate(0.5px, -0.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .subtitle {
@@ -114,7 +194,6 @@ h1 {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.74);
 }
-
 
 .hero-links {
   display: flex;
@@ -158,13 +237,12 @@ h1 {
   }
 
   .hero-overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(10, 10, 10, 0.88) 0%,
-        rgba(10, 10, 10, 0.72) 40%,
-        rgba(10, 10, 10, 0.9) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.88) 0%,
+      rgba(10, 10, 10, 0.72) 40%,
+      rgba(10, 10, 10, 0.9) 100%
+    );
   }
 
   .hero-content {
@@ -212,152 +290,4 @@ h1 {
     gap: 1rem;
     margin-top: 2rem;
   }
-}
-
-.glitch {
-  position: relative;
-  display: inline-block;
-}
-
-/* capas glitch */
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-/* capa roja */
-.glitch::before {
-  color: #ff0040;
-  transform: translate(1px, 0);
-}
-
-/* capa azul */
-.glitch::after {
-  color: #00e0ff;
-  transform: translate(-1px, 0);
-}
-
-/* activar glitch en hover */
-.glitch:hover::before,
-.glitch:hover::after {
-  opacity: 0.4;
-}
-
-/* pequeño flicker */
-.glitch:hover {
-  animation: glitch-flicker 1s;
-}
-
-@keyframes glitch-flicker {
-  0% { transform: none; }
-  20% { transform: translate(0.5px, -0.5px); }
-  40% { transform: translate(-0.5px, 0.5px); }
-  60% { transform: translate(0.5px, 0.5px); }
-  80% { transform: translate(-0.5px, -0.5px); }
-  100% { transform: none; }
-}
-
-
-h1 {
-  position: relative;
-}
-
-/* capa glitch */
-h1::before,
-h1::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-/* rojo */
-h1::before {
-  color: #ff0033;
-  transform: translate(1px, 0);
-}
-
-/* azul */
-h1::after {
-  color: #00ccff;
-  transform: translate(-1px, 0);
-}
-
-/* activar glitch */
-h1:hover::before,
-h1:hover::after {
-  opacity: 0.4;
-}
-
-/* ===== GLITCH IMAGEN ===== */
-
-.hero-media {
-  position: absolute;
-  inset: 0;
-  background-image: url("./assets/foto1.jpg");
-  background-size: cover;
-  background-position: 72% center;
-  background-repeat: no-repeat;
-  filter: grayscale(100%) contrast(1.05) brightness(0.38);
-  z-index: 1;
-  overflow: hidden;
-}
-
-/* capas glitch */
-.hero-media::before,
-.hero-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: inherit;
-  background-size: cover;
-  background-position: inherit;
-  mix-blend-mode: screen;
-  opacity: 0;
-}
-
-/* capa roja */
-.hero-media::before {
-  transform: translate(2px, 0);
-  filter: contrast(1.2) brightness(0.6) sepia(1) hue-rotate(-50deg) saturate(4);
-}
-
-/* capa azul */
-.hero-media::after {
-  transform: translate(-2px, 0);
-  filter: contrast(1.2) brightness(0.6) sepia(1) hue-rotate(200deg) saturate(4);
-}
-
-/* activar glitch al hover */
-.hero:hover .hero-media::before,
-.hero:hover .hero-media::after {
-  opacity: 0.25;
-}
-
-/* ===== MICRO INTERFERENCIA EN NOMBRE ===== */
-
-h1 {
-  position: relative;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-/* animación glitch */
-@keyframes glitchMove {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(-1px, 1px); }
-  40% { transform: translate(1px, -1px); }
-  60% { transform: translate(-0.5px, 0.5px); }
-  80% { transform: translate(0.5px, -0.5px); }
-  100% { transform: translate(0, 0); }
-}
-
-/* activación */
-h1:hover {
-  animation: glitchMove 0.25s ease;
 }
