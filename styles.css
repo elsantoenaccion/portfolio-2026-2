@@ -339,3 +339,25 @@ h1:hover::after {
   opacity: 0.25;
 }
 
+/* ===== MICRO INTERFERENCIA EN NOMBRE ===== */
+
+h1 {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* animación glitch */
+@keyframes glitchMove {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-0.5px, 0.5px); }
+  80% { transform: translate(0.5px, -0.5px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* activación */
+h1:hover {
+  animation: glitchMove 0.25s ease;
+}
