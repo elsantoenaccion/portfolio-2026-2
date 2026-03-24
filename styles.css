@@ -260,3 +260,36 @@ h1 {
   80% { transform: translate(-0.5px, -0.5px); }
   100% { transform: none; }
 }
+
+
+h1 {
+  position: relative;
+}
+
+/* capa glitch */
+h1::before,
+h1::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+/* rojo */
+h1::before {
+  color: #ff0033;
+  transform: translate(1px, 0);
+}
+
+/* azul */
+h1::after {
+  color: #00ccff;
+  transform: translate(-1px, 0);
+}
+
+/* activar glitch */
+h1:hover::before,
+h1:hover::after {
+  opacity: 0.4;
+}
