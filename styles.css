@@ -198,11 +198,11 @@ h1 {
 
 
 h1 {
-  font-size: clamp(3.5rem, 6vw, 6.2rem);
+  font-size: clamp(3rem, 3vw, 4rem);
   font-weight: 500;
   letter-spacing: -0.05em;
   line-height: 0.92;
-  max-width: 7ch;
+  max-width: 5ch;
 }
   
   .subtitle {
