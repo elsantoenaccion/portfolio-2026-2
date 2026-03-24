@@ -249,7 +249,7 @@ h1 {
 
 /* pequeño flicker */
 .glitch:hover {
-  animation: glitch-flicker 0.2s infinite;
+  animation: glitch-flicker 1s;
 }
 
 @keyframes glitch-flicker {
