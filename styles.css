@@ -293,3 +293,49 @@ h1:hover::before,
 h1:hover::after {
   opacity: 0.4;
 }
+
+/* ===== GLITCH IMAGEN ===== */
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/foto1.jpg");
+  background-size: cover;
+  background-position: 72% center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) contrast(1.05) brightness(0.38);
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* capas glitch */
+.hero-media::before,
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: inherit;
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+
+/* capa roja */
+.hero-media::before {
+  transform: translate(2px, 0);
+  filter: contrast(1.2) brightness(0.6) sepia(1) hue-rotate(-50deg) saturate(4);
+}
+
+/* capa azul */
+.hero-media::after {
+  transform: translate(-2px, 0);
+  filter: contrast(1.2) brightness(0.6) sepia(1) hue-rotate(200deg) saturate(4);
+}
+
+/* activar glitch al hover */
+.hero:hover .hero-media::before,
+.hero:hover .hero-media::after {
+  opacity: 0.25;
+}
+
