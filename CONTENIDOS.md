@@ -4,7 +4,13 @@ Primera propuesta del 23 de noviembre de 2026. Los textos de presentación son r
 
 ## Criterio de estructura
 
-Se conserva la navegación existente: Proyectos, Procesos, Obra, Textos y Sobre. Se retoma la orientación visual recuperada de marzo de 2026: contraste, tipografía protagonista, composición contemporánea y detalles digitales discretos. El verde es una propuesta para las páginas interiores.
+La navegación incorpora Proyectos, Procesos, Obra, Música, Textos y Sobre. Se retoma la orientación visual recuperada de marzo de 2026: contraste, tipografía protagonista, composición contemporánea y detalles digitales discretos. El verde es una propuesta para las páginas interiores.
+
+## Música
+
+Sergio pidió un apartado que reúna creación con sintetizadores e investigación alrededor de la música y la cumbia. Eligió explícitamente que creación e investigación tuvieran el mismo peso. La página presenta ambas como entradas equivalentes y la cumbia como un tema compartido. Los textos son una primera propuesta editorial que describe intereses y formas de trabajo, sin atribuir resultados de investigación ni inventar un catálogo de grabaciones.
+
+La selección de audios, sesiones y proyectos concretos queda pendiente. Un mismo proyecto podrá enlazarse desde Música y desde Obra, Procesos o Textos según sus contenidos; tendrá una ficha principal para evitar duplicados. Antes de añadir proyectos mencionados en conversaciones anteriores, revisar su vigencia y la intención de mostrarlos.
 
 ## Fuentes
 

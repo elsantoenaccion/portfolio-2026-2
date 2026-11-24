@@ -7,10 +7,12 @@ Sitio personal y profesional de Sergio Ruiz Trejo. HTML y CSS estáticos, desple
 - `proyectos.html`: práctica institucional, museos y acervos.
 - `procesos.html`: investigación artística y modos de trabajo.
 - `obra.html`: selección de piezas y registro de La voz.
+- `musica.html`: creación con sintetizadores e investigación musical, con la cumbia como punto de encuentro.
 - `textos.html`: publicaciones, capítulo de libro y tesis.
 - `sobre.html`: semblanza, formación, residencias y contacto.
 - `styles.css`: identidad visual original de la portada.
 - `interiores.css`: diseño adaptable de las páginas interiores.
+- `musica.css`: composición de Música, con igual peso para creación e investigación.
 - `assets/`: fotografías y recursos visuales.
 - `vercel.json`: URLs limpias y configuración de despliegue.
 - `CONTENIDOS.md`: procedencia de contenidos y pendientes editoriales.
